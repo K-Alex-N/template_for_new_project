@@ -13,9 +13,14 @@ folder_from = os.path.join(os.path.abspath(os.curdir), 'template_for_new_project
 
 for f in os.listdir(folder_from):
     if os.path.isfile(os.path.join(folder_from, f)):
-        shutil.copy(os.path.join(folder_from, f), os.path.join(folder_to, folder_user, f))
-    if os.path.isdir(os.path.join(folder_from, f)):
-        shutil.copytree(os.path.join(folder_from, f), os.path.join(folder_to, folder_user, f))
+        shutil.copy(os.path.join(folder_from, f), os.path.join(folder_to, f))
+    else:
+        shutil.copytree(os.path.join(folder_from, f), os.path.join(folder_to, f))
+
+
+# может быть сразу установку пакетов сделать?
+# пока просто копированием из файла pip_install.txt делать
+
 
 
 
